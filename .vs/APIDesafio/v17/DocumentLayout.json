@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\models\\listlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:models\\listlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAQwDEAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T03:38:44.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "Models\\Login.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Models\\Login.cs",
+              "RelativeToolTip": "Models\\Login.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA7wB8AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T18:48:30.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ListLogin.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Models\\ListLogin.cs",
+              "RelativeDocumentMoniker": "Models\\ListLogin.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Models\\ListLogin.cs",
+              "RelativeToolTip": "Models\\ListLogin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T03:06:40.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T18:34:33.971Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
