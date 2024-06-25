@@ -8,9 +8,9 @@ namespace APIDesafio.Services
         public List<Usuario> Usuarios = new List<Usuario>()
         {
             new Usuario {
-                UserName = "user1",
-                Password = "password123",
-                Permissao = false
+                Password = "password",
+                Permissao = false,
+                UserName = "username"
             },
             new Usuario {
                 UserName = "user2",
@@ -52,9 +52,9 @@ namespace APIDesafio.Services
             _listaSingletonService.RemoveAt(_listaSingletonService.FindIndex(x => x == usuario));
         }
 
-        public void Atualizar(Usuario usuario, Usuario usuarioAtualizado)
+        public void Atualizar(int id, Usuario usuarioAtualizado)
         {
-            _listaSingletonService[_listaSingletonService.FindIndex(x => x == usuario)] = usuarioAtualizado;
+            _listaSingletonService[_listaSingletonService.FindIndex(x => x.getId() == id)] = usuarioAtualizado;
         }
     }
 }

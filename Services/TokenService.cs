@@ -9,7 +9,7 @@ namespace APIDesafio.Services
 {
     public class TokenService
     {
-        public string Generate(Login login)
+        public string Generate(Usuario usuario)
         {
             //Instancia do JwtSecurityTokenHandler
             var handler = new JwtSecurityTokenHandler();
@@ -19,7 +19,7 @@ namespace APIDesafio.Services
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = GenerateClaims(login),
+                Subject = GenerateClaims(usuario),
                 SigningCredentials = credentials,
                 Expires = DateTime.UtcNow.AddDays(1)
             };
@@ -32,11 +32,11 @@ namespace APIDesafio.Services
             
         }
     
-        private static ClaimsIdentity GenerateClaims(Login login)
+        private static ClaimsIdentity GenerateClaims(Usuario usuario)
         {
             var ci = new ClaimsIdentity();
 
-            ci.AddClaim(new Claim(ClaimTypes.Name, login.UserName));
+            ci.AddClaim(new Claim(ClaimTypes.Name, usuario.UserName));
             return ci;
         }
     }

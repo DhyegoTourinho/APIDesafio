@@ -47,23 +47,23 @@ namespace APIDesafio.Controllers
             }
         }
 
-        /*[HttpPut("Atualizar")]
         //Metodo que Atualiza um usuário existente:
-        public IActionResult Atualizar([FromBody] Usuario usuario, Usuario usuarioAtualizado)
+        [HttpPut("Atualizar{id}")]
+        public IActionResult Atualizar(int id, [FromBody] Usuario usuario)
         {
             try
             {
-                _usuarioService.Atualizar(usuario, usuarioAtualizado);
+                _usuarioService.Atualizar(id , usuario);
                 return Ok("Usuário atualizado com sucesso!");
             }
             catch (Exception ex) 
             {
                 return BadRequest("Não foi possível atualizar este usuário.");
             }
-        }*/
+        }
 
-        [HttpDelete("Remover")]
         //Metodo que remove um usuário existente:
+        [HttpDelete("Remover")]
         public IActionResult Remover([FromBody] Usuario usuario)
         {
             try
