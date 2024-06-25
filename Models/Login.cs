@@ -10,7 +10,7 @@ namespace APIDesafio.Models
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Permissao { get; set; }
-        public Login(string name, string password, Boolean permissao)
+        public Login(string name, string password, bool permissao)
         {
             this.Id = IdCont;
             this.UserName = name;

@@ -129,3 +129,12 @@ C:\Users\dhyego.silva\Documents\APIDesafio\obj\Debug\net8.0\scopedcss\bundle\API
 C:\Users\dhyego.silva\Documents\APIDesafio\obj\Debug\net8.0\APIDesafio.csproj.Up2Date
 C:\Users\dhyego.silva\Documents\APIDesafio\obj\Debug\net8.0\APIDesafio.genruntimeconfig.cache
 C:\Users\dhyego.silva\Documents\APIDesafio\obj\Debug\net8.0\ref\APIDesafio.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\astro\OneDrive\Documentos\APIDesafio\obj\Debug\net8.0\APIDesafio.sourcelink.json

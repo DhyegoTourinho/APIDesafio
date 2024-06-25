@@ -42,5 +42,19 @@ namespace APIDesafio.Services
         {
             return _listaSingletonService;
         }
+
+        public Usuario ObterUmUsuario(Usuario usuario)
+        {
+            return _listaSingletonService.Find(x => x == usuario);
+        }
+        public void Remover(Usuario usuario)
+        {
+            _listaSingletonService.RemoveAt(_listaSingletonService.FindIndex(x => x == usuario));
+        }
+
+        public void Atualizar(Usuario usuario, Usuario usuarioAtualizado)
+        {
+            _listaSingletonService[_listaSingletonService.FindIndex(x => x == usuario)] = usuarioAtualizado;
+        }
     }
 }

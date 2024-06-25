@@ -11,41 +11,14 @@ namespace APIDesafio.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+        //Instanciação de UsuarioService:
         private readonly UsuarioService _usuarioService;
         public UsuarioController()
         {
             _usuarioService = new UsuarioService();
         }
-        // GET: api/<LoginController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    if (listLogin.login == null){
-        //        return null; 
-        //    }
-        //        string[] logins = new string[listLogin.login.Count];
-                
-        //        for(int i = 0; i < listLogin.login.Count; i++)
-        //    {
-        //        logins[i] = listLogin.login[i].ToString();
-        //    }
-        //        return logins;
-        //}
-
-        // GET api/<LoginController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    Login usuario = listLogin.login.Find(x => x.Id == id);
-            
-        //    if (usuario == null)
-        //    {
-        //        return "Empty";
-        //    }
-        //    return usuario.ToString();
-        //}
-
-        // POST api/<LoginController>
+        
+        //Metodo que cria um novo usuário:
         [HttpPost("criar")]
         public IActionResult Post([FromBody] Usuario usuario)
         {
@@ -54,13 +27,14 @@ namespace APIDesafio.Controllers
                 _usuarioService.Adicionar(usuario);
                 return Ok("Usuario cadastrado com sucesso!");
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return BadRequest("Erro ao cadastrar usuario!");
             }
         }
 
-        [HttpGet("ObterUsuarios")]
+        //Metodo que Obtem todos os usuários:
+        [HttpGet("obterUsuarios")]
         public IActionResult ObterUsuarios()
         {
             try
@@ -73,20 +47,40 @@ namespace APIDesafio.Controllers
             }
         }
 
-        // PUT api/<LoginController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        /*[HttpPut("Atualizar")]
+        //Metodo que Atualiza um usuário existente:
+        public IActionResult Atualizar([FromBody] Usuario usuario, Usuario usuarioAtualizado)
         {
+            try
+            {
+                _usuarioService.Atualizar(usuario, usuarioAtualizado);
+                return Ok("Usuário atualizado com sucesso!");
+            }
+            catch (Exception ex) 
+            {
+                return BadRequest("Não foi possível atualizar este usuário.");
+            }
+        }*/
+
+        [HttpDelete("Remover")]
+        //Metodo que remove um usuário existente:
+        public IActionResult Remover([FromBody] Usuario usuario)
+        {
+            try
+            {
+                _usuarioService.Remover(usuario);
+            return Ok("Usuario removido");
+            }
+            catch(System.ArgumentOutOfRangeException ex)
+            {
+                return BadRequest("Usuário não existe.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Não foi possível remover o usuário");
+            }
+
         }
 
-        // DELETE api/<LoginController>/5
-        //[HttpDelete("deletar")]
-        //public void Delete(string userName)
-        //{
-        //    Login usuarioRemove = listLogin.login.Find(x => x.UserName == userName);
-        //    if (usuarioRemove != null) {
-        //        listLogin.login.Remove(usuarioRemove);
-        //    }
-        //}
     }
 }

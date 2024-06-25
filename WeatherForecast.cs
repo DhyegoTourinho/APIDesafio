@@ -1,4 +1,4 @@
-namespace APIDesafio
+﻿namespace APIDesafio
 {
     public class WeatherForecast
     {
