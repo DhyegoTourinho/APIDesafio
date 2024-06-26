@@ -2,8 +2,8 @@
 {
     public class Usuario
     {
-        private static int _idCont = 0;
-        private int Id { get; set; }
+        private static int _idCont = 1;
+        public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool Permissao { get; set; }
@@ -13,6 +13,7 @@
             this.Id = _idCont;
             _idCont++;
         }
+
         public Usuario(string userName, string password, bool permissao) 
         {
             this.Id = _idCont;
@@ -22,14 +23,9 @@
             _idCont++;
         }
 
-        public int getId()
-        {
-            return Id;
-        }
-
         public override string ToString()
         {
-            return " Id: " + getId() +
+            return " Id: " + Id +
                    "\n Nome: " + UserName +
                    "\n Senha: " + Password +
                    "\n Permissão: " + Permissao;

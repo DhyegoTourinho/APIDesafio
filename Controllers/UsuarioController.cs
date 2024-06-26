@@ -1,4 +1,5 @@
 ﻿using APIDesafio.Models;
+using APIDesafio.Models.DTO;
 using APIDesafio.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
@@ -20,16 +21,23 @@ namespace APIDesafio.Controllers
         
         //Metodo que cria um novo usuário:
         [HttpPost("criar")]
-        public IActionResult Post([FromBody] Usuario usuario)
+        public IActionResult Post([FromBody] UsuarioEntrada usuarioEntrada)
         {
             try
             {
+                var usuario = new Usuario
+                {
+                    Password = usuarioEntrada.Password,
+                    Permissao = usuarioEntrada.Permissao,
+                    UserName = usuarioEntrada.UserName
+                };
+
                 _usuarioService.Adicionar(usuario);
-                return Ok("Usuario cadastrado com sucesso!");
+                return Ok("Usuário cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
-                return BadRequest("Erro ao cadastrar usuario!");
+                return BadRequest("Erro ao cadastrar usuário!");
             }
         }
 
@@ -43,16 +51,32 @@ namespace APIDesafio.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possivel retornar os usuarios");
+                return BadRequest("Não foi possivel retornar os usuários");
+            }
+        }
+        
+        //Metodo que Obtem todos os usuários:
+        [HttpGet("obterUsuarios/{id}")]
+        public IActionResult ObterUsuariosPorID(string id)
+        {
+            try
+            {
+                var idInteiro = int.TryParse(id, out int resultado) ? resultado : 0;
+                return Ok(_usuarioService.ObterUmUsuarioPorId(idInteiro));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Não foi possível retornar os usuários");
             }
         }
 
         //Metodo que Atualiza um usuário existente:
-        [HttpPut("Atualizar{id}")]
-        public IActionResult Atualizar(int id, [FromBody] Usuario usuario)
+        [HttpPut("atualizar/{id}")]
+        public IActionResult Atualizar(int id, [FromBody] UsuarioEntrada usuario)
         {
             try
             {
+
                 _usuarioService.Atualizar(id , usuario);
                 return Ok("Usuário atualizado com sucesso!");
             }
@@ -63,12 +87,13 @@ namespace APIDesafio.Controllers
         }
 
         //Metodo que remove um usuário existente:
-        [HttpDelete("Remover")]
-        public IActionResult Remover([FromBody] Usuario usuario)
+        [HttpDelete("remover/{id}")]
+        public IActionResult Remover(string id)
         {
             try
             {
-                _usuarioService.Remover(usuario);
+                int idInteiro = int.TryParse(id, out int resultado) ? resultado : 0;
+                _usuarioService.Remover(idInteiro);
             return Ok("Usuario removido");
             }
             catch(System.ArgumentOutOfRangeException ex)

@@ -1,4 +1,5 @@
 ﻿using APIDesafio.Models;
+using APIDesafio.Models.DTO;
 
 namespace APIDesafio.Services
 {
@@ -25,7 +26,7 @@ namespace APIDesafio.Services
             }
         };
 
-        public UsuarioService() 
+        public UsuarioService()
         {
             if (_listaSingletonService != null && _listaSingletonService.Count == 0)
             {
@@ -43,18 +44,22 @@ namespace APIDesafio.Services
             return _listaSingletonService;
         }
 
-        public Usuario ObterUmUsuario(Usuario usuario)
+        public Usuario ObterUmUsuarioPorId(int id)
         {
-            return _listaSingletonService.Find(x => x == usuario);
+            return _listaSingletonService.Find(x => x.Id == id);
         }
-        public void Remover(Usuario usuario)
+        public void Remover(int id)
         {
-            _listaSingletonService.RemoveAt(_listaSingletonService.FindIndex(x => x == usuario));
+            _listaSingletonService.RemoveAt(_listaSingletonService.FindIndex(x => x.Id == id));
         }
 
-        public void Atualizar(int id, Usuario usuarioAtualizado)
+        public void Atualizar(int id, UsuarioEntrada usuarioAtualizado)
         {
-            _listaSingletonService[_listaSingletonService.FindIndex(x => x.getId() == id)] = usuarioAtualizado;
+            var usuarioSalvo = _listaSingletonService.FirstOrDefault(x => x.Id == id);
+            
+            usuarioSalvo.UserName = usuarioAtualizado.UserName;
+            usuarioSalvo.Permissao = usuarioAtualizado.Permissao;
+            usuarioSalvo.Password = usuarioAtualizado.Password;
         }
     }
 }
