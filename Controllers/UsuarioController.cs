@@ -1,6 +1,7 @@
 ﻿using APIDesafio.Models;
 using APIDesafio.Models.DTO;
 using APIDesafio.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 
@@ -37,7 +38,7 @@ namespace APIDesafio.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Erro ao cadastrar usuário!");
+                return BadRequest("Erro ao cadastrar usuário!" + "\n\n" + ex.Message);
             }
         }
 
@@ -51,7 +52,7 @@ namespace APIDesafio.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possivel retornar os usuários");
+                return BadRequest("Não foi possivel retornar os usuários" + "\n\n" + ex.Message);
             }
         }
         
@@ -66,7 +67,7 @@ namespace APIDesafio.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possível retornar os usuários");
+                return BadRequest("Não foi possível retornar os usuários" + "\n\n" + ex.Message);
             }
         }
 
@@ -82,11 +83,12 @@ namespace APIDesafio.Controllers
             }
             catch (Exception ex) 
             {
-                return BadRequest("Não foi possível atualizar este usuário.");
+                return BadRequest("Não foi possível atualizar este usuário." + "\n\n" + ex.Message);
             }
         }
 
         //Metodo que remove um usuário existente:
+        [Authorize]
         [HttpDelete("remover/{id}")]
         public IActionResult Remover(string id)
         {
@@ -96,16 +98,39 @@ namespace APIDesafio.Controllers
                 _usuarioService.Remover(idInteiro);
             return Ok("Usuario removido");
             }
-            catch(System.ArgumentOutOfRangeException ex)
+            catch(ArgumentOutOfRangeException ex)
             {
-                return BadRequest("Usuário não existe.");
+                return BadRequest("Usuário não existe." + "\n\n" + ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possível remover o usuário");
+                return BadRequest("Não foi possível remover o usuário" + "\n\n" + ex.Message);
             }
 
         }
 
+        //Metodo que remove um usuário existente:
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] LoginEntrada loginEntrada)
+        {
+            try
+            {
+                var tokenJWT = _usuarioService.Login(loginEntrada);
+                return Ok(tokenJWT);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                return BadRequest("Usuário não existe." + "\n\n" + ex.Message);
+            }
+            catch (BadHttpRequestException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Não foi possível remover o usuário" + "\n\n" + ex.Message);
+            }
+
+        }
     }
 }

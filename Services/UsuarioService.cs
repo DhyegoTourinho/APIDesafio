@@ -15,6 +15,7 @@ namespace APIDesafio.Services
             },
             new Usuario {
                 UserName = "user2",
+
                 Password = "password123",
                 Permissao = false
             },
@@ -60,6 +61,17 @@ namespace APIDesafio.Services
             usuarioSalvo.UserName = usuarioAtualizado.UserName;
             usuarioSalvo.Permissao = usuarioAtualizado.Permissao;
             usuarioSalvo.Password = usuarioAtualizado.Password;
+        }
+
+        public string Login(LoginEntrada usuario)
+        {
+            var usuarioSalvo = _listaSingletonService.FirstOrDefault(x => x.UserName == usuario.UserName && x.Password == usuario.Password);
+
+            if (usuarioSalvo == null) 
+            {
+                throw new BadHttpRequestException("Usuario ou senha inválidos!", 401);
+            }
+            return TokenService.Generate(usuarioSalvo);
         }
     }
 }

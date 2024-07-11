@@ -9,7 +9,7 @@ namespace APIDesafio.Services
 {
     public class TokenService
     {
-        public string Generate(Usuario usuario)
+        public static string Generate(Usuario usuario)
         {
             //Instancia do JwtSecurityTokenHandler
             var handler = new JwtSecurityTokenHandler();
@@ -36,6 +36,7 @@ namespace APIDesafio.Services
         {
             var ci = new ClaimsIdentity();
 
+            ci.AddClaim(new Claim("id", usuario.Id.ToString()));
             ci.AddClaim(new Claim(ClaimTypes.Name, usuario.UserName));
             return ci;
         }
