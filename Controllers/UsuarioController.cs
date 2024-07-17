@@ -25,7 +25,6 @@ namespace APIDesafio.Controllers
         }
 
         //Rota que cria um novo usuário:
-        
         [HttpPost("criar")]
         public IActionResult Post([FromServices] AppDbContext context, [FromBody] UsuarioEntrada usuarioEntrada)
         {
@@ -49,7 +48,6 @@ namespace APIDesafio.Controllers
         }
 
         //Rota que Obtem todos os usuários
-        
         [HttpGet("obterUsuarios")]
         public IActionResult ObterUsuarios([FromServices] AppDbContext context)
         {
@@ -98,6 +96,7 @@ namespace APIDesafio.Controllers
         }
 
         //Metodo que remove um usuário existente:
+        [Authorize(Roles = "True")]
         [HttpDelete("remover/{id}")]
         public IActionResult Remover([FromServices] AppDbContext context, string id)
         {
