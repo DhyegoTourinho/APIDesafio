@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace APIDesafio.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase
@@ -118,6 +119,7 @@ namespace APIDesafio.Controllers
         }
 
         //Metodo que remove um usuário existente:
+        [AllowAnonymous]
         [HttpPost("login")]
         public IActionResult Login([FromServices] AppDbContext context, [FromBody] LoginEntrada loginEntrada)
         {

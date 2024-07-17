@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\",
+  "WorkspaceRootPath": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\astro\\onedrive\\documentos\\apidesafio\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,13 +30,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Program.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAYAAAAYAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABcAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-28T11:56:59.92Z",
               "IsPinned": true,
@@ -46,11 +46,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Controllers\\UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAswGoAAAA9AAAA",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAswHkAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-27T15:27:27.656Z",
               "IsPinned": true,
@@ -58,13 +58,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Services\\UsuarioService.cs",
               "RelativeToolTip": "Services\\UsuarioService.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAA7wEAAAAClAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAkwEAAAAClAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-16T14:59:56.337Z",
               "IsPinned": true,
@@ -72,11 +72,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\astro\\OneDrive\\Documentos\\APIDesafio\\Models\\Usuario.cs",
               "RelativeToolTip": "Models\\Usuario.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
