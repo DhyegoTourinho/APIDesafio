@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\models\\dto\\loginentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:models\\dto\\loginentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\services\\listasingletonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:services\\listasingletonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\models\\dto\\usuarioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:models\\dto\\usuarioentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\models\\dto\\usuarioretorno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:models\\dto\\usuarioretorno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|c:\\users\\dhyego.silva\\documents\\apidesafio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{130F602D-53E5-4A95-9392-FC0E327A8B8A}|APIDesafio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,121 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginEntrada.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\DTO\\LoginEntrada.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\LoginEntrada.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\DTO\\LoginEntrada.cs",
-              "RelativeToolTip": "Models\\DTO\\LoginEntrada.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-10T13:51:59.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UsuarioEntrada.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\DTO\\UsuarioEntrada.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioEntrada.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\DTO\\UsuarioEntrada.cs",
-              "RelativeToolTip": "Models\\DTO\\UsuarioEntrada.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:06:51.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UsuarioRetorno.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\DTO\\UsuarioRetorno.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioRetorno.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\DTO\\UsuarioRetorno.cs",
-              "RelativeToolTip": "Models\\DTO\\UsuarioRetorno.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:06:31.499Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAYAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-28T11:56:59.92Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\UsuarioService.cs",
-              "RelativeToolTip": "Services\\UsuarioService.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAIwEkAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T15:32:36.156Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "Services\\TokenService.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\TokenService.cs",
-              "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAkwCYAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T15:27:35.694Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAADwv1oAAAATAAAA",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAswGoAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-27T15:27:27.656Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ListaSingletonService.cs",
-              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\ListaSingletonService.cs",
-              "RelativeDocumentMoniker": "Services\\ListaSingletonService.cs",
-              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\ListaSingletonService.cs",
-              "RelativeToolTip": "Services\\ListaSingletonService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "Services\\UsuarioService.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAA7wEAAAAClAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-27T15:32:34.337Z",
+              "WhenOpened": "2024-07-16T14:59:56.337Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Models\\Usuario.cs",
               "ToolTip": "C:\\Users\\dhyego.silva\\Documents\\APIDesafio\\Models\\Usuario.cs",
               "RelativeToolTip": "Models\\Usuario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:06:52.8Z"
+              "WhenOpened": "2024-07-17T14:30:49.846Z",
+              "EditorCaption": ""
             }
           ]
         }

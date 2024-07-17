@@ -1,9 +1,11 @@
-﻿using APIDesafio.Models;
+﻿using APIDesafio.Dados;
+using APIDesafio.Models;
 using APIDesafio.Models.DTO;
 using APIDesafio.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,17 +15,21 @@ namespace APIDesafio.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+        
         //Instanciação de UsuarioService:
         private readonly UsuarioService _usuarioService;
         public UsuarioController()
         {
             _usuarioService = new UsuarioService();
         }
+
+        //Rota que cria um novo usuário:
         
-        //Metodo que cria um novo usuário:
         [HttpPost("criar")]
-        public IActionResult Post([FromBody] UsuarioEntrada usuarioEntrada)
+        public IActionResult Post([FromServices] AppDbContext context, [FromBody] UsuarioEntrada usuarioEntrada)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
             try
             {
                 var usuario = new Usuario
@@ -32,9 +38,8 @@ namespace APIDesafio.Controllers
                     Permissao = usuarioEntrada.Permissao,
                     UserName = usuarioEntrada.UserName
                 };
-
-                _usuarioService.Adicionar(usuario);
-                return Ok("Usuário cadastrado com sucesso!");
+                _usuarioService.AdicionarAsync(usuario, context);
+                return Ok("Usuário adicionado com sucesso!\n");
             }
             catch (Exception ex)
             {
@@ -42,28 +47,30 @@ namespace APIDesafio.Controllers
             }
         }
 
-        //Metodo que Obtem todos os usuários:
+        //Rota que Obtem todos os usuários
+        
         [HttpGet("obterUsuarios")]
-        public IActionResult ObterUsuarios()
+        public IActionResult ObterUsuarios([FromServices] AppDbContext context)
         {
             try
             {
-                return Ok(_usuarioService.ObterUsuarios());
+                return Ok(_usuarioService.ObterUsuariosAsync(context).Result);
             }
             catch (Exception ex)
             {
                 return BadRequest("Não foi possivel retornar os usuários" + "\n\n" + ex.Message);
             }
         }
-        
+
         //Metodo que Obtem todos os usuários:
         [HttpGet("obterUsuarios/{id}")]
-        public IActionResult ObterUsuariosPorID(string id)
+        public IActionResult ObterUsuariosPorID([FromServices] AppDbContext context, string id)
         {
             try
             {
                 var idInteiro = int.TryParse(id, out int resultado) ? resultado : 0;
-                return Ok(_usuarioService.ObterUmUsuarioPorId(idInteiro));
+                var usuario = _usuarioService.ObterUmUsuarioPorIdAsync(idInteiro, context).Result;
+                return usuario == null ? NotFound("Usuário não existe") : Ok(usuario);
             }
             catch (Exception ex)
             {
@@ -71,14 +78,16 @@ namespace APIDesafio.Controllers
             }
         }
 
-        //Metodo que Atualiza um usuário existente:
+        //Metodo que Atualiza um usuário existente
         [HttpPut("atualizar/{id}")]
-        public IActionResult Atualizar(int id, [FromBody] UsuarioEntrada usuario)
+        public IActionResult Atualizar([FromServices] AppDbContext context, int id, [FromBody] UsuarioEntrada usuario)
         {
             try
             {
+                var statuscode = _usuarioService.AtualizarAsync(context, id , usuario);
+                if(statuscode == null)
+                    return NotFound();
 
-                _usuarioService.Atualizar(id , usuario);
                 return Ok("Usuário atualizado com sucesso!");
             }
             catch (Exception ex) 
@@ -88,15 +97,14 @@ namespace APIDesafio.Controllers
         }
 
         //Metodo que remove um usuário existente:
-        [Authorize]
         [HttpDelete("remover/{id}")]
-        public IActionResult Remover(string id)
+        public IActionResult Remover([FromServices] AppDbContext context, string id)
         {
             try
             {
                 int idInteiro = int.TryParse(id, out int resultado) ? resultado : 0;
-                _usuarioService.Remover(idInteiro);
-            return Ok("Usuario removido");
+                var usuario = _usuarioService.RemoverAsync(context, idInteiro);
+            return Ok("Usuario removido\n" + usuario.Result);
             }
             catch(ArgumentOutOfRangeException ex)
             {
@@ -111,16 +119,12 @@ namespace APIDesafio.Controllers
 
         //Metodo que remove um usuário existente:
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginEntrada loginEntrada)
+        public IActionResult Login([FromServices] AppDbContext context, [FromBody] LoginEntrada loginEntrada)
         {
             try
             {
-                var tokenJWT = _usuarioService.Login(loginEntrada);
-                return Ok(tokenJWT);
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                return BadRequest("Usuário não existe." + "\n\n" + ex.Message);
+                var tokenJWT = _usuarioService.LoginAsync(context, loginEntrada);
+                return Ok("Token: " + tokenJWT.Result);
             }
             catch (BadHttpRequestException ex)
             {
@@ -128,7 +132,7 @@ namespace APIDesafio.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Não foi possível remover o usuário" + "\n\n" + ex.Message);
+                return BadRequest(ex.Message);
             }
 
         }

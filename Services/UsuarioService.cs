@@ -1,32 +1,17 @@
-﻿using APIDesafio.Models;
+﻿using APIDesafio.Dados;
+using APIDesafio.Models;
 using APIDesafio.Models.DTO;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace APIDesafio.Services
 {
     public class UsuarioService
     {
         private readonly List<Usuario> _listaSingletonService = ListaSingletonService<Usuario>.GetInstance();
-        public List<Usuario> Usuarios = new List<Usuario>()
-        {
-            new Usuario {
-                Password = "password",
-                Permissao = false,
-                UserName = "username"
-            },
-            new Usuario {
-                UserName = "user2",
-
-                Password = "password123",
-                Permissao = false
-            },
-            new Usuario
-            {
-                UserName = "user3",
-                Password = "password123",
-                Permissao = false
-            }
-        };
-
+        public List<Usuario> Usuarios = new List<Usuario>();
         public UsuarioService()
         {
             if (_listaSingletonService != null && _listaSingletonService.Count == 0)
@@ -35,39 +20,51 @@ namespace APIDesafio.Services
             }
         }
 
-        public void Adicionar(Usuario usuario)
+        public async Task AdicionarAsync(Usuario usuario, AppDbContext context)
         {
-            _listaSingletonService.Add(usuario);
+            await context.Usuarios.AddAsync(usuario);
+            await context.SaveChangesAsync();
         }
 
-        public List<Usuario> ObterUsuarios()
+        public async Task<List<Usuario>> ObterUsuariosAsync(AppDbContext context)
         {
-            return _listaSingletonService;
+            var usuarios = await context.Usuarios.AsNoTracking().ToListAsync();
+            return usuarios;
         }
 
-        public Usuario ObterUmUsuarioPorId(int id)
+        public async Task<Usuario> ObterUmUsuarioPorIdAsync(int id, AppDbContext context)
         {
-            return _listaSingletonService.Find(x => x.Id == id);
-        }
-        public void Remover(int id)
-        {
-            _listaSingletonService.RemoveAt(_listaSingletonService.FindIndex(x => x.Id == id));
+            var usuario = await context.Usuarios.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            return usuario;
         }
 
-        public void Atualizar(int id, UsuarioEntrada usuarioAtualizado)
+        public async Task<Usuario> RemoverAsync(AppDbContext context, int id)
         {
-            var usuarioSalvo = _listaSingletonService.FirstOrDefault(x => x.Id == id);
-            
+            var usuarioRemovido = await context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+            context.Usuarios.Remove(usuarioRemovido);
+            await context.SaveChangesAsync();
+            return usuarioRemovido;
+        }
+
+        public async Task<string> AtualizarAsync(AppDbContext context, int id, UsuarioEntrada usuarioAtualizado)
+        {
+            var usuarioSalvo = await context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+            if (usuarioSalvo == null)
+                return null;
+
             usuarioSalvo.UserName = usuarioAtualizado.UserName;
             usuarioSalvo.Permissao = usuarioAtualizado.Permissao;
             usuarioSalvo.Password = usuarioAtualizado.Password;
+
+            context.SaveChanges();
+            return "Ok";
         }
 
-        public string Login(LoginEntrada usuario)
+        public async Task<string> LoginAsync(AppDbContext context, LoginEntrada usuario)
         {
-            var usuarioSalvo = _listaSingletonService.FirstOrDefault(x => x.UserName == usuario.UserName && x.Password == usuario.Password);
+            var usuarioSalvo = await context.Usuarios.FirstOrDefaultAsync(x => x.UserName.ToLower() == usuario.UserName.ToLower() && x.Password == usuario.Password);
 
-            if (usuarioSalvo == null) 
+            if (usuarioSalvo == null)
             {
                 throw new BadHttpRequestException("Usuario ou senha inválidos!", 401);
             }

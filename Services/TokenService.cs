@@ -21,7 +21,8 @@ namespace APIDesafio.Services
             {
                 Subject = GenerateClaims(usuario),
                 SigningCredentials = credentials,
-                Expires = DateTime.UtcNow.AddDays(1)
+                Expires = DateTime.UtcNow.AddDays(1),
+                Audience = "clienteapi"
             };
 
             //Gera um Token
@@ -37,6 +38,7 @@ namespace APIDesafio.Services
             var ci = new ClaimsIdentity();
 
             ci.AddClaim(new Claim("id", usuario.Id.ToString()));
+            ci.AddClaim(new Claim("Roles", usuario.Permissao.ToString()));
             ci.AddClaim(new Claim(ClaimTypes.Name, usuario.UserName));
             return ci;
         }
