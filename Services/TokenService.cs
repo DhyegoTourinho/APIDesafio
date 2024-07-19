@@ -37,9 +37,8 @@ namespace APIDesafio.Services
         {
             var ci = new ClaimsIdentity();
 
-            ci.AddClaim(new Claim("id", usuario.Id.ToString()));
-            ci.AddClaim(new Claim("Roles", usuario.Cargo));
             ci.AddClaim(new Claim(ClaimTypes.Name, usuario.UserName));
+            ci.AddClaim(new Claim(ClaimTypes.Role, usuario.Cargo));
             return ci;
         }
     }

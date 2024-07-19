@@ -77,6 +77,7 @@ namespace APIDesafio.Controllers
             }
         }
 
+        [Authorize(Roles = "Administrador")]
         [HttpGet("obterUsuarios/{id}")]
         public IActionResult ObterUsuariosPorID([FromServices] AppDbContext context, string id)
         {

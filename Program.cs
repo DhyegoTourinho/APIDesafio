@@ -2,6 +2,7 @@ using APIDesafio;
 using APIDesafio.Dados;
 using APIDesafio.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -11,8 +12,11 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<TokenService>();
 builder.Services.AddControllers();
+builder.Services.AddAuthorization(opt => {
+    opt.AddPolicy("RequireAdminstratorRole",
+        policy => policy.RequireRole("Administrador"));
 
-//ESSE CARA PODE DAR ERRADO, ADICIONEI PRA TESTE
+});
 builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddAuthentication(opcs =>
 {

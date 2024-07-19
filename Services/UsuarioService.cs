@@ -50,9 +50,15 @@ namespace APIDesafio.Services
             return usuarios;
         }
 
-        public async Task<Usuario> ObterUmUsuarioPorIdAsync(int id, AppDbContext context)
+        public async Task<UsuarioRetorno> ObterUmUsuarioPorIdAsync(int id, AppDbContext context)
         {
-            var usuario = await context.Usuarios.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            var usuario = await context.Usuarios.AsNoTracking().Select(colunasUsuario => new UsuarioRetorno
+            {
+                Id = colunasUsuario.Id,
+                UserName = colunasUsuario.UserName,
+                Password = colunasUsuario.Password,
+                Cargo = colunasUsuario.Cargo
+            }).FirstOrDefaultAsync(x => x.Id == id);
             return usuario;
         }
 
