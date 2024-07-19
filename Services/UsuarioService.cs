@@ -20,15 +20,33 @@ namespace APIDesafio.Services
             }
         }
 
+        public async Task<string> LoginAsync(AppDbContext context, LoginEntrada usuario)
+        {
+            var usuarioSalvo = await context.Usuarios.FirstOrDefaultAsync(x => x.UserName.ToLower() == usuario.UserName.ToLower() && x.Password == usuario.Password);
+
+            if (usuarioSalvo == null)
+            {
+                throw new BadHttpRequestException("Usuario ou senha inválidos!", 401);
+            }
+            return TokenService.Generate(usuarioSalvo);
+        }
+
         public async Task AdicionarAsync(Usuario usuario, AppDbContext context)
         {
             await context.Usuarios.AddAsync(usuario);
             await context.SaveChangesAsync();
         }
 
-        public async Task<List<Usuario>> ObterUsuariosAsync(AppDbContext context)
+        public async Task<List<UsuarioRetorno>> ObterUsuariosAsync(AppDbContext context)
         {
-            var usuarios = await context.Usuarios.AsNoTracking().ToListAsync();
+
+            var usuarios = await context.Usuarios.AsNoTracking().Select(colunasUsuario => new UsuarioRetorno
+            {
+                Id = colunasUsuario.Id,
+                UserName = colunasUsuario.UserName,
+                Password = colunasUsuario.Password,
+                Cargo = colunasUsuario.Cargo
+            }).ToListAsync();
             return usuarios;
         }
 
@@ -36,14 +54,6 @@ namespace APIDesafio.Services
         {
             var usuario = await context.Usuarios.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
             return usuario;
-        }
-
-        public async Task<Usuario> RemoverAsync(AppDbContext context, int id)
-        {
-            var usuarioRemovido = await context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
-            context.Usuarios.Remove(usuarioRemovido);
-            await context.SaveChangesAsync();
-            return usuarioRemovido;
         }
 
         public async Task<string> AtualizarAsync(AppDbContext context, int id, UsuarioEntrada usuarioAtualizado)
@@ -60,15 +70,18 @@ namespace APIDesafio.Services
             return "Ok";
         }
 
-        public async Task<string> LoginAsync(AppDbContext context, LoginEntrada usuario)
+        public async Task<Usuario> RemoverAsync(AppDbContext context, int id)
         {
-            var usuarioSalvo = await context.Usuarios.FirstOrDefaultAsync(x => x.UserName.ToLower() == usuario.UserName.ToLower() && x.Password == usuario.Password);
+            var usuarioRemovido = await context.Usuarios.FirstOrDefaultAsync(x => x.Id == id);
+            context.Usuarios.Remove(usuarioRemovido);
+            await context.SaveChangesAsync();
+            return usuarioRemovido;
+        }
 
-            if (usuarioSalvo == null)
-            {
-                throw new BadHttpRequestException("Usuario ou senha inválidos!", 401);
-            }
-            return TokenService.Generate(usuarioSalvo);
+        public async Task RemoverTodosAsync(AppDbContext context)
+        {
+            await context.Database.EnsureDeletedAsync();
+            context.Database.Migrate();
         }
     }
 }

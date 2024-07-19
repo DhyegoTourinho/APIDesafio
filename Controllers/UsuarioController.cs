@@ -16,15 +16,32 @@ namespace APIDesafio.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        
-        //Instanciação de UsuarioService:
         private readonly UsuarioService _usuarioService;
         public UsuarioController()
         {
             _usuarioService = new UsuarioService();
         }
 
-        //Rota que cria um novo usuário:
+        [AllowAnonymous]
+        [HttpPost("login")]
+        public IActionResult Login([FromServices] AppDbContext context, [FromBody] LoginEntrada loginEntrada)
+        {
+            try
+            {
+                var tokenJWT = _usuarioService.LoginAsync(context, loginEntrada);
+                return Ok("Token: " + tokenJWT.Result);
+            }
+            catch (BadHttpRequestException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
         [HttpPost("criar")]
         public IActionResult Post([FromServices] AppDbContext context, [FromBody] UsuarioEntrada usuarioEntrada)
         {
@@ -47,7 +64,6 @@ namespace APIDesafio.Controllers
             }
         }
 
-        //Rota que Obtem todos os usuários
         [HttpGet("obterUsuarios")]
         public IActionResult ObterUsuarios([FromServices] AppDbContext context)
         {
@@ -61,7 +77,6 @@ namespace APIDesafio.Controllers
             }
         }
 
-        //Metodo que Obtem todos os usuários:
         [HttpGet("obterUsuarios/{id}")]
         public IActionResult ObterUsuariosPorID([FromServices] AppDbContext context, string id)
         {
@@ -77,26 +92,24 @@ namespace APIDesafio.Controllers
             }
         }
 
-        //Metodo que Atualiza um usuário existente
         [HttpPut("atualizar/{id}")]
         public IActionResult Atualizar([FromServices] AppDbContext context, int id, [FromBody] UsuarioEntrada usuario)
         {
             try
             {
-                var statuscode = _usuarioService.AtualizarAsync(context, id , usuario);
-                if(statuscode == null)
+                var statuscode = _usuarioService.AtualizarAsync(context, id, usuario);
+                if (statuscode == null)
                     return NotFound();
 
                 return Ok("Usuário atualizado com sucesso!");
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return BadRequest("Não foi possível atualizar este usuário." + "\n\n" + ex.Message);
             }
         }
 
-        //Metodo que remove um usuário existente:
-        [Authorize(Roles = "True")]
+        //[Authorize(Roles = "Administrador")]
         [HttpDelete("remover/{id}")]
         public IActionResult Remover([FromServices] AppDbContext context, string id)
         {
@@ -104,9 +117,9 @@ namespace APIDesafio.Controllers
             {
                 int idInteiro = int.TryParse(id, out int resultado) ? resultado : 0;
                 var usuario = _usuarioService.RemoverAsync(context, idInteiro);
-            return Ok("Usuario removido\n" + usuario.Result);
+                return Ok("Usuario removido\n" + usuario.Result);
             }
-            catch(ArgumentOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException ex)
             {
                 return BadRequest("Usuário não existe." + "\n\n" + ex.Message);
             }
@@ -117,25 +130,19 @@ namespace APIDesafio.Controllers
 
         }
 
-        //Metodo que remove um usuário existente:
-        [AllowAnonymous]
-        [HttpPost("login")]
-        public IActionResult Login([FromServices] AppDbContext context, [FromBody] LoginEntrada loginEntrada)
+        //[Authorize(Roles = "Administrador")]
+        [HttpDelete("removerTodos")]
+        public IActionResult RemoverTodos([FromServices] AppDbContext context)
         {
             try
             {
-                var tokenJWT = _usuarioService.LoginAsync(context, loginEntrada);
-                return Ok("Token: " + tokenJWT.Result);
-            }
-            catch (BadHttpRequestException ex)
-            {
-                return StatusCode(ex.StatusCode, ex.Message);
+                _usuarioService.RemoverTodosAsync(context);
+                return Ok("Todos os usuários foram removidos com sucesso");
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Não foi possível remover todos os usuários" + ex.Message);
             }
-
         }
     }
 }
